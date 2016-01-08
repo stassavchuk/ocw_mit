@@ -1,0 +1,45 @@
+{
+  "external_id": "9-914-special-topics-genetics-neurobiology-and-pathophysiology-of-psychiatric-disorders-fall-2008",
+  "title": "Special Topics: Genetics, Neurobiology, and Pathophysiology of Psychiatric Disorders",
+  "date": "2008-09-01T00:00:00+00:00",
+  "abstract": "An opportunity for graduate study of advanced subjects in Brain and Cognitive Sciences not included in other subject listings. The key topics covered in this course are Bipolar Disorder, Psychosis, Schizophrenia, Genetics of Psychiatric Disorder, DISC1, Ca++ Signaling, Neurogenesis and Depression, Lithium and GSK3 Hypothesis, Behavioral Assays, CREB in Addiction and Depressive Behaviors, The GABA System-I, The GABA System-II, The Glutamate Hypothesis of Schizophrenia, The Dopamine Pathway and DARPP32.",  
+  "url" : "http://ocw.mit.edu/courses/brain-and-cognitive-sciences/9-914-special-topics-genetics-neurobiology-and-pathophysiology-of-psychiatric-disorders-fall-2008/index.htm",
+  "meta": {
+    "open_courseware": {
+      "class_info": {
+        "level": "graduate",
+        "instructors": [
+          "Edward A. Scolnick",
+          "Li-Huei Tsai"
+        ],
+        "course_number" : "9.914",
+        "description" : "An opportunity for graduate study of advanced subjects in Brain and Cognitive Sciences not included in other subject listings. The key topics covered in this course are Bipolar Disorder, Psychosis, Schizophrenia, Genetics of Psychiatric Disorder, DISC1, Ca++ Signaling, Neurogenesis and Depression, Lithium and GSK3 Hypothesis, Behavioral Assays, CREB in Addiction and Depressive Behaviors, The GABA System-I, The GABA System-II, The Glutamate Hypothesis of Schizophrenia, The Dopamine Pathway and DARPP32.",
+      },
+      "lectures": [
+        {
+          "lecture_1": {
+            "title": "if instructor gives name to each lecture, use that.  Else use 'lecture_1'",
+            "original_filename": "MIT9_914f08_Lec01.pdf",
+            "processed_filename": "MIT9_914f08_Lec01.txt",
+            "words": ""
+          }
+        }
+      ],
+      "assignments": [
+        {
+          "assignment_1": {
+            "title": "if instructor gives name to each assignment, use that.  Else use 'assignment_1'",
+            "words": "cleaned up (whitespace removed, \n's removed"
+          }
+        },
+        {
+          "assignment_2": {
+            "title": "if instructor gives name to each assignment, use that.  Else use 'assignment_2'",
+            "words": "cleaned up (whitespace removed, \n's removed"
+          }
+        }
+      ],
+      "readings": []
+    }
+  }
+}
