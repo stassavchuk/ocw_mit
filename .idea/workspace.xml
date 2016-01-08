@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f10f46e7-cb03-4a0a-850b-5b106b441944" name="Default" comment="" />
+    <list default="true" id="f10f46e7-cb03-4a0a-850b-5b106b441944" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ocw_mit_stanislav.py" afterPath="$PROJECT_DIR$/ocw_mit_stanislav.py" />
+    </list>
     <ignored path="MIT_courses.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,46 +24,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
+      <file leaf-file-name="ocw_mit_stanislav.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ocw_mit_stanislav.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3320965">
+              <caret line="321" column="50" selection-start-line="321" selection-start-column="48" selection-end-line="321" selection-end-column="50" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#873#1376#0" expanded="false" />
-                <element signature="e#1409#1882#0" expanded="false" />
-                <element signature="e#1919#2514#0" expanded="false" />
-                <element signature="e#2674#3091#0" expanded="false" />
-                <element signature="e#3135#3952#0" expanded="false" />
-                <element signature="e#3998#4685#0" expanded="false" />
-                <element signature="e#4732#4969#0" expanded="false" />
-                <element signature="e#5008#6088#0" expanded="false" />
-                <element signature="e#6124#7190#0" expanded="false" />
-                <element signature="e#7226#7475#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ocw_mit_stanislav.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../Test/ocw_mit_stanislav.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0">
-              <caret line="425" column="0" selection-start-line="425" selection-start-column="0" selection-end-line="425" selection-end-column="0" />
-              <folding>
-                <element signature="e#959#1462#0" expanded="false" />
-                <element signature="e#1495#1968#0" expanded="false" />
-                <element signature="e#2005#2600#0" expanded="false" />
-                <element signature="e#2636#2730#0" expanded="false" />
-                <element signature="e#2760#3177#0" expanded="false" />
-                <element signature="e#3221#4038#0" expanded="false" />
-                <element signature="e#4084#4771#0" expanded="false" />
-                <element signature="e#4818#5055#0" expanded="false" />
-                <element signature="e#5094#6174#0" expanded="false" />
-                <element signature="e#6210#7276#0" expanded="false" />
-                <element signature="e#7312#7561#0" expanded="false" />
-                <element signature="e#7584#14013#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -85,6 +55,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -93,13 +66,14 @@
         <option value="$PROJECT_DIR$/data.json" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/../Test/ocw_mit_stanislav.py" />
+        <option value="$PROJECT_DIR$/ocw_mit_stanislav.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
+    <option name="width" value="1378" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -127,8 +101,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -143,7 +117,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MIT_courses" />
+              <option name="myItemId" value="ocw_mit" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -154,7 +128,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test/ocw_mit_stanislav.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Python.ocw_mit_stanislav">
     <configuration default="false" name="crawler" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -366,10 +340,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18689501" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1867065" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294702" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294702" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294702" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -409,58 +383,37 @@
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+            <element signature="e#873#1376#0" expanded="false" />
+            <element signature="e#1409#1882#0" expanded="false" />
+            <element signature="e#1919#2514#0" expanded="false" />
+            <element signature="e#2674#3091#0" expanded="false" />
+            <element signature="e#3135#3952#0" expanded="false" />
+            <element signature="e#3998#4685#0" expanded="false" />
+            <element signature="e#4732#4969#0" expanded="false" />
+            <element signature="e#5008#6088#0" expanded="false" />
+            <element signature="e#6124#7190#0" expanded="false" />
+            <element signature="e#7226#7475#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/MIT_Courses123/24-947-spring-2013/24-947-spring-2013.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#873#1376#0" expanded="false" />
-            <element signature="e#1409#1882#0" expanded="false" />
-            <element signature="e#1919#2514#0" expanded="false" />
-            <element signature="e#2674#3091#0" expanded="false" />
-            <element signature="e#3135#3952#0" expanded="false" />
-            <element signature="e#3998#4685#0" expanded="false" />
-            <element signature="e#4732#4969#0" expanded="false" />
-            <element signature="e#5008#6088#0" expanded="false" />
-            <element signature="e#6124#7190#0" expanded="false" />
-            <element signature="e#7226#7475#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../Test/ocw_mit_stanislav.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#959#1462#0" expanded="false" />
-            <element signature="e#1495#1968#0" expanded="false" />
-            <element signature="e#2005#2600#0" expanded="false" />
-            <element signature="e#2636#2730#0" expanded="false" />
-            <element signature="e#2760#3177#0" expanded="false" />
-            <element signature="e#3221#4038#0" expanded="false" />
-            <element signature="e#4084#4771#0" expanded="false" />
-            <element signature="e#4818#5055#0" expanded="false" />
-            <element signature="e#5094#6174#0" expanded="false" />
-            <element signature="e#6210#7276#0" expanded="false" />
-            <element signature="e#7312#7561#0" expanded="false" />
-            <element signature="e#7584#14013#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/MIT_Courses123/24-947-spring-2013/24-947-spring-2013.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
             <element signature="e#873#1376#0" expanded="false" />
             <element signature="e#1409#1882#0" expanded="false" />
             <element signature="e#1919#2514#0" expanded="false" />
@@ -488,7 +441,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
             <element signature="e#873#1376#0" expanded="false" />
             <element signature="e#1409#1882#0" expanded="false" />
             <element signature="e#1919#2514#0" expanded="false" />
@@ -516,7 +469,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
             <element signature="e#873#1376#0" expanded="false" />
             <element signature="e#1409#1882#0" expanded="false" />
             <element signature="e#1919#2514#0" expanded="false" />
@@ -544,7 +497,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
             <element signature="e#873#1376#0" expanded="false" />
             <element signature="e#1409#1882#0" expanded="false" />
             <element signature="e#1919#2514#0" expanded="false" />
@@ -572,7 +525,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
             <element signature="e#873#1376#0" expanded="false" />
             <element signature="e#1409#1882#0" expanded="false" />
             <element signature="e#1919#2514#0" expanded="false" />
@@ -600,7 +553,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
             <element signature="e#873#1376#0" expanded="false" />
             <element signature="e#1409#1882#0" expanded="false" />
             <element signature="e#1919#2514#0" expanded="false" />
@@ -628,7 +581,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
             <element signature="e#873#1376#0" expanded="false" />
             <element signature="e#1409#1882#0" expanded="false" />
             <element signature="e#1919#2514#0" expanded="false" />
@@ -656,7 +609,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
             <element signature="e#873#1376#0" expanded="false" />
             <element signature="e#1409#1882#0" expanded="false" />
             <element signature="e#1919#2514#0" expanded="false" />
@@ -684,7 +637,35 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
+            <element signature="e#873#1376#0" expanded="false" />
+            <element signature="e#1409#1882#0" expanded="false" />
+            <element signature="e#1919#2514#0" expanded="false" />
+            <element signature="e#2674#3091#0" expanded="false" />
+            <element signature="e#3135#3952#0" expanded="false" />
+            <element signature="e#3998#4685#0" expanded="false" />
+            <element signature="e#4732#4969#0" expanded="false" />
+            <element signature="e#5008#6088#0" expanded="false" />
+            <element signature="e#6124#7190#0" expanded="false" />
+            <element signature="e#7226#7475#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/MIT_Courses123/24-947-spring-2013/24-947-spring-2013.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
             <element signature="e#873#1376#0" expanded="false" />
             <element signature="e#1409#1882#0" expanded="false" />
             <element signature="e#1919#2514#0" expanded="false" />
@@ -704,7 +685,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
             <element signature="e#873#1376#0" expanded="false" />
             <element signature="e#1409#1882#0" expanded="false" />
             <element signature="e#1919#2514#0" expanded="false" />
@@ -724,7 +705,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
             <element signature="e#873#1376#0" expanded="false" />
             <element signature="e#1409#1882#0" expanded="false" />
             <element signature="e#1919#2514#0" expanded="false" />
@@ -850,7 +831,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="234" column="0" selection-start-line="234" selection-start-column="0" selection-end-line="234" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
             <element signature="e#873#1376#0" expanded="false" />
             <element signature="e#1409#1882#0" expanded="false" />
             <element signature="e#1919#2514#0" expanded="false" />
@@ -865,23 +846,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Test/ocw_mit_stanislav.py">
+    <entry file="file://$PROJECT_DIR$/ocw_mit_stanislav.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0">
-          <caret line="425" column="0" selection-start-line="425" selection-start-column="0" selection-end-line="425" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3320965">
+          <caret line="321" column="50" selection-start-line="321" selection-start-column="48" selection-end-line="321" selection-end-column="50" />
           <folding>
-            <element signature="e#959#1462#0" expanded="false" />
-            <element signature="e#1495#1968#0" expanded="false" />
-            <element signature="e#2005#2600#0" expanded="false" />
-            <element signature="e#2636#2730#0" expanded="false" />
-            <element signature="e#2760#3177#0" expanded="false" />
-            <element signature="e#3221#4038#0" expanded="false" />
-            <element signature="e#4084#4771#0" expanded="false" />
-            <element signature="e#4818#5055#0" expanded="false" />
-            <element signature="e#5094#6174#0" expanded="false" />
-            <element signature="e#6210#7276#0" expanded="false" />
-            <element signature="e#7312#7561#0" expanded="false" />
-            <element signature="e#7584#14013#0" expanded="false" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

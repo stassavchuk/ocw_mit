@@ -41,13 +41,13 @@ def download_course(url, base_dir):
 
     filename = downloadLink.split("/")[-1]
 
-    fileplace = base_dir + "/" + filename.split(".")[0]
+    fileplace = base_dir + "\\" + filename.split(".")[0]
     if not os.path.isdir(fileplace):
         os.mkdir(fileplace)
 
-    urllib.urlretrieve(downloadLink, fileplace + "/" + filename)
+    urllib.urlretrieve(downloadLink, fileplace + "\\" + filename)
 
-    return fileplace + "/" + filename
+    return fileplace + "\\" + filename
 
 def findAllPDFs(filepath):
     zip = zipfile.ZipFile(filepath, 'r')
@@ -276,7 +276,7 @@ def main_func():
             # Getting download link of course
             # Returns name of ZIP file
             zip_path = download_course(course, BASE_DIR)
-            path = ("/").join(zip_path.split("/")[:-1])
+            path = ("\\").join(zip_path.split("\\")[:-1])
             print "Course has been downloaded to folder " + path
 
             # Searching all necessary files
@@ -289,8 +289,8 @@ def main_func():
                 z.extract(f, BASE_DIR)
 
             # Extracting metadata: ./contents/index.htm.xml
-            z.extract(path.split("/")[-1] + "/contents/index.htm.xml", BASE_DIR)
-            (title, abstract, level, instructors, course_number) = get_couse_data_from_XML(path + "/contents/index.htm.xml")
+            z.extract(path.split("\\")[-1] + "/contents/index.htm.xml", BASE_DIR)
+            (title, abstract, level, instructors, course_number) = get_couse_data_from_XML(path + "\\contents\\index.htm.xml")
             # Deleting meta-file
             os.remove(path + "/contents/index.htm.xml")
 
@@ -317,10 +317,10 @@ def main_func():
             # List of extracted from ZIP archive files
             contentlist = []
             for f in content:
-                temp = BASE_DIR + "/" + f
-                # while "/" in temp:
-                #     temp = temp.replace("/", "\\")
-                # contentlist.append(temp)
+                temp = BASE_DIR + "\\" + f
+                while "/" in temp:
+                    temp = temp.replace("/", "\\")
+                contentlist.append(temp)
 
             # For all PDF files do...
             print "Processing files..."
@@ -339,8 +339,8 @@ def main_func():
                 text = prepare_text(text)
 
                 # Creating TXT file for PDF
-                pdf_name = string.join(pdf_path.split("/")[-1].split(".")[:-1])
-                write_to_txt(text, ("/").join(pdf_path.split("/")[:-1]) + "/" + pdf_name)
+                pdf_name = string.join(pdf_path.split("\\")[-1].split(".")[:-1])
+                write_to_txt(text, ("\\").join(pdf_path.split("\\")[:-1]) + "\\" + pdf_name)
                 print "\t" + str(num) + ". File '" + pdf_name + ".txt' has been extracted"
 
 
@@ -349,7 +349,7 @@ def main_func():
                 # Deleting XML file
                 os.remove(xml_path)
 
-                object_name = pdf_path.split("/")[-2]
+                object_name = pdf_path.split("\\")[-2]
 
                 if object_name not in jsondata["meta"]["open_courseware"].keys():
                     jsondata["meta"]["open_courseware"][object_name] = []
@@ -374,8 +374,8 @@ def main_func():
             if "assignments" not in jsondata["meta"]["open_courseware"].keys():
                 try:
                     # extracting html
-                    z.extract(path.split("/")[-1] + "/contents/assignments/index.htm", BASE_DIR)
-                    assignments = html_assignments(path + "/contents/assignments/index.htm")
+                    z.extract(path.split("\\")[-1] + "/contents/assignments/index.htm", BASE_DIR)
+                    assignments = html_assignments(path + "\\contents\\assignments\\index.htm")
                     jsondata["meta"]["open_courseware"]["assignments"] = assignments
                 except:
                     pass
@@ -384,8 +384,8 @@ def main_func():
             if "readings" not in jsondata["meta"]["open_courseware"].keys():
                 try:
                     # extracting html
-                    z.extract(path.split("/")[-1] + "/contents/readings/index.htm", BASE_DIR)
-                    readings = html_readings(path + "/contents/readings/index.htm")
+                    z.extract(path.split("\\")[-1] + "/contents/readings/index.htm", BASE_DIR)
+                    readings = html_readings(path + "\\contents\\readings\\index.htm")
                     jsondata["meta"]["open_courseware"]["readings"] = readings
                 except:
                     pass
@@ -394,8 +394,8 @@ def main_func():
             if "syllabus" not in jsondata["meta"]["open_courseware"].keys():
                 try:
                     # extracting html
-                    z.extract(path.split("/")[-1] + "/contents/readings/index.htm", BASE_DIR)
-                    syllabus = html_syllabus(path + "/contents/readings/index.htm")
+                    z.extract(path.split("\\")[-1] + "/contents/readings/index.htm", BASE_DIR)
+                    syllabus = html_syllabus(path + "\\contents\\readings\\index.htm")
                     jsondata["meta"]["open_courseware"]["syllabus"] = syllabus
                 except:
                     pass
@@ -404,7 +404,7 @@ def main_func():
             jsondata["terms"] = termtext
 
             # Composing all to JSON
-            with open(path + "/" + path.split("/")[-1] + ".json", 'w') as outfile:
+            with open(path + "\\" + path.split("\\")[-1] + ".json", 'w') as outfile:
                 json.dump(jsondata, outfile,  indent=4)
 
             # Deleting ZIP archive
