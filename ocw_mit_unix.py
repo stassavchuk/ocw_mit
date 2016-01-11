@@ -29,10 +29,10 @@ def get_courses_set(base_page):
         courses.append("http://ocw.mit.edu" + link['href'])
     courses = set(courses)
 
-    first_course = list(courses)[:1]
-    return first_course
+    # first_course = list(courses)[:1]
+    # return first_course
 
-    # return courses
+    return courses
 
 def download_course(url, base_dir):
     url += "/download-course-materials"
