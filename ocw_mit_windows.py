@@ -5,6 +5,8 @@ import zipfile
 import string
 from xml.etree import ElementTree
 import json
+import traceback
+import re
 # Converting PDF to TXT
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.converter import TextConverter
@@ -15,8 +17,7 @@ from cStringIO import StringIO
 
 TERMS_PAGE = "http://ocw.mit.edu/terms"
 BASE_PAGE = "http://ocw.mit.edu/courses/index.htm"
-BASE_DIR = "MIT_Courses"
-# BASE_DIR = os.getcwd()
+BASE_DIR = "Test"
 
 def get_courses_set(base_page):
     htmltext = urllib.urlopen(base_page).read()
@@ -114,24 +115,16 @@ def prepare_text(text):
     return new_text.replace("\n", " ").replace("\t", " ").replace("\u", "")
 
 def get_terms_information(terms_url):
-    htmltext = urllib.urlopen(terms_url).read()
-
-    soup = BeautifulSoup(htmltext, "html.parser")
-    text_terms = ""
-    for sibling in soup.find("h2", {"class": "subhead"}).find_next_siblings():
-
-        if repr(sibling)[:2] == "<p":
-            try:
-                if str(sibling.contents[0])[:4] != "<img":
-                    text_terms += str(sibling.contents[0])
-            except:
-                pass
-        if repr(sibling)[:3] == "<ul" or repr(sibling)[:3] == "<ol":
-            for item in sibling.contents:
-                text_terms += str(item)
-
-    text_terms = text_terms.replace("<br/>", "").replace("<li>", "").replace("</li>", "").replace("<strong>", "").replace("</strong>", "").replace("<em>","").replace("</em>", "")
-    return text_terms.replace("\n", " ").replace("\t", " ").replace("\u", "")
+    try:
+        htmltext = urllib.urlopen(terms_url).read()
+        soup = BeautifulSoup(htmltext, "html.parser")
+        text = soup.findAll('div', {"id":"global_inner"})
+        text = text[0].get_text(' ', strip=True)
+        text = remore_whitespaces(text)
+        text = remove_non_ascii(text)
+        return text
+    except:
+        return ""
 
 def get_couse_data_from_XML(xml_path):
 
@@ -161,42 +154,15 @@ def get_lecture_data_from_XML(xml_path):
     except:
         return False
 
-def html_assignments(html_path):
-    htmltext = open(html_path, 'r').read()
-    soup = BeautifulSoup(htmltext, "html.parser")
-    table = soup.findAll('div', {"class":"maintabletemplate"})
-    assignments = []
+def get_text_from_htm(htm_path):
     try:
-        rows = table[0].findAll("tbody")[0].findAll("tr")
-        textfile = open(html_path[:-3] + "txt", "w")
-        i = 0
-        for row in rows:
-            i += 1
-            data = row.findAll("td")
-            title = data[1].get_text(' ', strip=True)
-            words = data[2].get_text(' ', strip=True)
-            textfile.write(title)
-            textfile.write(words)
-            assignments.append(
-                {
-                    "assignment_" + str(i):{
-                        "title" : title,
-                        "words" : words
-                    }
-                }
-            )
+        htmltext = open(htm_path, 'r').read()
+        soup = BeautifulSoup(htmltext, "html.parser")
+        text = soup.findAll('div', {"id":"course_inner_section"})
+        text = text[0].get_text(' ', strip=True)
+        return text
     except:
-        words = table[0].get_text(' ', strip=True)
-        assignments.append(
-            {
-                "reading_" + str(i):{
-                    "title" : "Readings",
-                    "words" : words
-                }
-            }
-        )
-
-    return assignments
+        return None
 
 def html_readings(html_path):
     htmltext = open(html_path, 'r').read()
@@ -246,6 +212,37 @@ def html_syllabus(html_path):
     }
     return syllabus
 
+def add_object_to_json(z, path, jsondata, object_name):
+    # Check if file exist coursename.zip/coursename/contents/assignments/index.htm
+    namecourse = path.split("\\")[-1]
+    if namecourse + "/contents/" + object_name + "/index.htm" in z.namelist():
+        # unpack file from ZIP
+        z.extract(namecourse + "/contents/" + object_name + "/index.htm", BASE_DIR)
+        text = get_text_from_htm(path + "\\contents\\" + object_name + "\\index.htm")
+        # if page is readable
+        if text:
+            text = remove_non_ascii(text)
+            write_to_txt(text, path + "\\contents\\" + object_name + "\\index")
+            all_words = {
+                "all_" + object_name: {
+                    "words": text,
+                    "original_filename": "index.htm",
+                    "processed_filename": "index.txt"
+                }
+            }
+            if object_name in jsondata["meta"]["open_courseware"].keys():
+                jsondata["meta"]["open_courseware"][object_name].append(all_words)
+            else:
+                jsondata["meta"]["open_courseware"][object_name] = [all_words]
+        else:
+            os.remove(path + "\\contents\\" + object_name + "\\index.htm")
+
+def remove_non_ascii(text):
+    return ''.join([i if 31 < ord(i) < 128 else ' ' for i in text])
+
+def remore_whitespaces(text):
+    return re.sub(' +', ' ', text).replace('\t', " ").replace("\n", " ")
+
 def main_func():
     # Creating folder of project
     if not os.path.isdir(BASE_DIR):
@@ -256,11 +253,7 @@ def main_func():
     courses = get_courses_set(BASE_PAGE)
     print "Found " + str(len(courses)) + " courses"
 
-    termtext = ""
-    try:
-        termtext = get_terms_information(TERMS_PAGE)
-    except:
-        pass
+    termtext = get_terms_information(TERMS_PAGE)
 
     # For each course ... do
     number = 0
@@ -337,6 +330,8 @@ def main_func():
 
                 # Deleting all non-ascii symbols
                 text = prepare_text(text)
+                text = remove_non_ascii(text)
+                text = remore_whitespaces(text)
 
                 # Creating TXT file for PDF
                 pdf_name = string.join(pdf_path.split("\\")[-1].split(".")[:-1])
@@ -370,36 +365,14 @@ def main_func():
 
             # Additionally looking for in ZIP
 
-            # Assignmants
-            if "assignments" not in jsondata["meta"]["open_courseware"].keys():
-                try:
-                    # extracting html
-                    z.extract(path.split("\\")[-1] + "/contents/assignments/index.htm", BASE_DIR)
-                    assignments = html_assignments(path + "\\contents\\assignments\\index.htm")
-                    jsondata["meta"]["open_courseware"]["assignments"] = assignments
-                except:
-                    pass
+            # Assignments
+            add_object_to_json(z, path, jsondata, "assignments")
 
             # Readings
-            if "readings" not in jsondata["meta"]["open_courseware"].keys():
-                try:
-                    # extracting html
-                    z.extract(path.split("\\")[-1] + "/contents/readings/index.htm", BASE_DIR)
-                    readings = html_readings(path + "\\contents\\readings\\index.htm")
-                    jsondata["meta"]["open_courseware"]["readings"] = readings
-                except:
-                    pass
+            add_object_to_json(z, path, jsondata, "readings")
 
-            # Summaries
-            if "syllabus" not in jsondata["meta"]["open_courseware"].keys():
-                try:
-                    # extracting html
-                    z.extract(path.split("\\")[-1] + "/contents/readings/index.htm", BASE_DIR)
-                    syllabus = html_syllabus(path + "\\contents\\readings\\index.htm")
-                    jsondata["meta"]["open_courseware"]["syllabus"] = syllabus
-                except:
-                    pass
-
+            # Syllabus
+            add_object_to_json(z, path, jsondata, "syllabus")
 
             jsondata["terms"] = termtext
 
@@ -409,12 +382,11 @@ def main_func():
 
             # Deleting ZIP archive
             z.close()
-            # os.remove(zip_path)
+            os.remove(zip_path)
 
             print "Course has been processed."
 
         except:
-            import traceback
             print
             print
             print
@@ -426,4 +398,3 @@ def main_func():
 
 if __name__ =="__main__":
     main_func()
-    # print BASE_DIR
